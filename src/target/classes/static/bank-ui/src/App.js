@@ -38,41 +38,35 @@ const BankApp = () => {
         }));
     };
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (editing) {
-        // Update existing bank
-        try {
-            await axios.put(`http://localhost:8081/api/banks/${form.bankId}`, form);
-            setEditing(false); // Exit editing mode
-        } catch (err) {
-            console.error("Error updating bank:", err);
-            setError("Failed to update bank.");
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (editing) {
+            try {
+                await axios.put(`http://localhost:8081/api/banks/${form.bankId}`, form);
+                setEditing(false);
+            } catch (err) {
+                console.error("Error updating bank:", err);
+                setError("Failed to update bank.");
+            }
+        } else {
+            try {
+                await axios.post("http://localhost:8081/api/banks", form);
+            } catch (err) {
+                console.error("Error adding bank:", err);
+                setError("Failed to add bank.");
+            }
         }
-    } else {
-        // Add a new bank
-        try {
-            const newBank = { ...form, bankId: undefined }; // Ensure no ID is sent for new entries
-            await axios.post("http://localhost:8081/api/banks", newBank);
-        } catch (err) {
-            console.error("Error adding bank:", err);
-            setError("Failed to add bank.");
-        }
-    }
-
-    // Refresh the table and reset the form
-    fetchBanks();
-    setForm({
-        bankId: "",
-        bankName: "",
-        bankYear: "",
-        bankEmp: "",
-        bankAddress: "",
-        bankBranches: "",
-        bankATMs: ""
-    });
-};
+        fetchBanks();
+        setForm({
+            bankId: "",
+            bankName: "",
+            bankYear: "",
+            bankEmp: "",
+            bankAddress: "",
+            bankBranches: "",
+            bankATMs: ""
+        });
+    };
 
     const handleEdit = (bank) => {
         setForm(bank);

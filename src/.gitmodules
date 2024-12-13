@@ -1,0 +1,3 @@
+[submodule "main/resources/static/bank-ui"]
+	path = main/resources/static/bank-ui
+	url = https://github.com/grauconejo13/BankApp_Final_.git
