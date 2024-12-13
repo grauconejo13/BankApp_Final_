@@ -1,0 +1,190 @@
+/* General Layout */
+/* Main container to hold the form and table horizontally */
+.main-container {
+    display: flex; /* Enables horizontal alignment */
+    justify-content: space-between; /* Space between form and table */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Adds space between form and table */
+    margin: 20px; /* Adds margin around the main container */
+}
+
+/* Styling for the form section */
+.form-container {
+    flex: 1; /* Allocates proportional space to the form */
+    max-width: 40%; /* Ensures the form doesn't take up too much width */
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Styling for the table section */
+.table-container {
+    flex: 2; /* Allocates more space to the table */
+    max-width: 60%; /* Ensures the table doesn't dominate */
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto; /* Scroll for large tables */
+    max-height: 80vh; /* Restricts table height */
+}
+
+/* Optional styling for BankDetails interactions */
+.bank-details {
+    margin-bottom: 20px; /* Adds spacing below BankDetails */
+    padding: 10px;
+    background-color: #e9ecef; /* Light blue-gray for details section */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #4a90e2, #50c9c3);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.hero .title {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 30px;}
+
+.hero .title, .hero .subtitle {
+    margin-left: 30px;}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+}
+
+/* Notification */
+.notification {
+    margin-top: 1rem;
+    border-left: 5px solid #ff3860;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Form Section */
+.form-container, .bank-details {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    
+}
+.form-container field{margin-left:30px;}
+
+.field {
+    margin-bottom: 1rem;
+}
+
+.input {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.button {
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+/* Form Specific */
+.button.is-success {
+    background-color: #23d160;
+    color: white;
+    border: none;
+}
+
+.button.is-warning {
+    background-color: #ffdd57;
+    color: #333;
+}
+
+.button.is-danger {
+    background-color: #ff3860;
+    color: white;
+}
+
+/* Table Section */
+.table-container {
+    margin-top: 1rem;
+    border-radius: 10px;
+    overflow-x: auto;
+    padding: 30px 0 50px 70px;
+}
+
+.table {
+    margin-top: 1rem;
+    background: white;
+    border-radius: 10px;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
+
+.table td {
+    text-align: center;
+    padding: 15px;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #f0f8ff;
+    transition: background-color 0.3s;
+}
+
+/* Buttons in Table */
+.table .button {
+    margin: 5px;
+}
+
+/* Columns */
+.columns {
+    align-items: flex-start;
+}
+
+.column {
+    padding: 15px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero .title {
+        font-size: 2rem;
+    }
+
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .box {
+        margin: 10px 0;
+    }
+
+    .columns {
+        flex-direction: column;
+    }
+}
